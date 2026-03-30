@@ -6,6 +6,7 @@ import Toggol from './components/Toggol';
 import Cards from './components/Cards';
 import Steps from './components/Steps';
 import Pricing from './components/Pricing';
+import CtaSection from './components/CtaSection';
 const dataRes=async ()=>{
   const data=await fetch("/data.json");
   return data.json()
@@ -20,6 +21,7 @@ const App = () => {
   <Cards dataRespons={dataRespons}></Cards>
   <Steps></Steps>
   <Pricing></Pricing>
+  <CtaSection></CtaSection>
   </>;
 };
 
