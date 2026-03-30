@@ -5,9 +5,18 @@ const Card = ({ data }) => {
   const { name, description, price, period, features, icon } = data;
 
   return (
-    <div className="flex flex-col justify-between h-full bg-base-200 shadow-md p-4">
+    <div
+      className="
+flex flex-col justify-between h-full 
+bg-[#F8F8F8]  p-4 rounded-md 
+border border-transparent
+
+transition-all duration-300
+hover:border-blue-200 hover:bg-[#f3efef] hover:shadow-lg
+"
+    >
       <div className="space-y-3">
-        <span className="p-2 border border-gray-500 rounded-full inline-block">
+        <span className="p-2 border border-gray-300 rounded-full inline-block">
           {icon}
         </span>
 
