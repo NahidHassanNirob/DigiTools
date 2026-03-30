@@ -24,7 +24,7 @@ const Steps = () => {
               started.
             </p>
           </div>
-          <span className="bg-blue-800 absolute top-3 right-3 text-white p-2 rounded-full">
+          <span className="bg-blue-800 absolute top-3 right-3 text-white h-8 w-8 flex items-center justify-center rounded-full">
             <span>01</span>
           </span>
         </div>
@@ -39,7 +39,7 @@ const Steps = () => {
               Browse our catalog and select the tools that fit your needs.
             </p>
           </div>
-          <span className="bg-blue-800 absolute top-3 right-3 text-white p-2 rounded-full">
+          <span className="bg-blue-800 absolute top-3 right-3 text-white h-8 w-8 flex items-center justify-center rounded-full">
             <span>02</span>
           </span>
         </div>
@@ -54,7 +54,7 @@ const Steps = () => {
               Download and start using your premium tools immediately.
             </p>
           </div>
-          <span className="bg-blue-800 absolute top-3 right-3 text-white p-2 rounded-full">
+          <span className="bg-blue-800 absolute top-3 right-3 text-white h-8 w-8 flex items-center justify-center rounded-full">
             <span>03</span>
           </span>
         </div>

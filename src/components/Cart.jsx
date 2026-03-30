@@ -1,4 +1,5 @@
 import React from "react";
+import { toast } from "react-toastify";
 
 const Cart = ({ cart, setCart }) => {
   let sum = 0;
@@ -9,9 +10,11 @@ const Cart = ({ cart, setCart }) => {
   const handelDelete = (itm) => {
     const remove=cart.filter(i=>i.id!==itm.id)
     setCart(remove)
+    toast.success('Remove Form Cart')
   };
   const checkout=()=>{
     setCart([])
+    toast.success('Payment Succesfully')
   }
 
   return (

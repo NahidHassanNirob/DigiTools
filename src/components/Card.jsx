@@ -1,5 +1,6 @@
 import { Check } from "lucide-react";
 import React from "react";
+import { toast } from "react-toastify";
 
 const Card = ({ data ,cart,setCart}) => {
   const { name, description, price, period, features, icon } = data;
@@ -7,10 +8,11 @@ const Card = ({ data ,cart,setCart}) => {
     const isExist=cart.find(item=>item.id===clickedData.id)
     console.log(isExist);
     if(isExist){
-      alert("already exist")
+      toast.error('Already Added To Cart')
       return;
     }
     setCart([...cart,clickedData])
+    toast.success('Added To Cart Succesfully')
   };
 
   return (
