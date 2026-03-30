@@ -1,8 +1,17 @@
 import { Check } from "lucide-react";
 import React from "react";
 
-const Card = ({ data }) => {
+const Card = ({ data ,cart,setCart}) => {
   const { name, description, price, period, features, icon } = data;
+  const handelCard = (clickedData) => {
+    const isExist=cart.find(item=>item.id===clickedData.id)
+    console.log(isExist);
+    if(isExist){
+      alert("already exist")
+      return;
+    }
+    setCart([...cart,clickedData])
+  };
 
   return (
     <div
@@ -40,7 +49,10 @@ hover:border-blue-200 hover:bg-[#f3efef] hover:shadow-lg
         </div>
       </div>
 
-      <button className="w-full rounded-full btn btn-primary mt-4">
+      <button
+        onClick={() => handelCard(data)}
+        className="w-full rounded-full btn btn-primary mt-4"
+      >
         Buy Now
       </button>
     </div>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Toggol = () => {
+const Toggol = ({toggol,setToggol,cart,setCart}) => {
   return (
     <div className="max-w-5xl mx-auto my-5 px-4">
       <h2 className="text-4xl font-bold text-center">Premium Digital Tools</h2>
@@ -13,6 +13,7 @@ const Toggol = () => {
       
       <div className="tabs bg-white justify-center mt-3 tabs-box">
         <input
+         onClick={()=>setToggol("products")}
           type="radio"
           name="my_tabs_1"
           className="tab px-5 rounded-none"
@@ -20,10 +21,11 @@ const Toggol = () => {
           defaultChecked
         />
         <input
+        onClick={()=>setToggol("cart")}
           type="radio"
           name="my_tabs_1"
           className="tab px-5 rounded-none"
-          aria-label="Cart"
+          aria-label={`cart (${cart.length})`}
           
         />
         
