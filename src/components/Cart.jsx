@@ -1,11 +1,18 @@
 import React from "react";
 
 const Cart = ({ cart, setCart }) => {
-  let sum=0;
-  for(let carts of cart){
-    sum=sum+carts.price;
+  let sum = 0;
+  for (let carts of cart) {
+    sum = sum + carts.price;
   }
-  let total=sum.toFixed(2)
+  let total = sum.toFixed(2);
+  const handelDelete = (itm) => {
+    const remove=cart.filter(i=>i.id!==itm.id)
+    setCart(remove)
+  };
+  const checkout=()=>{
+    setCart([])
+  }
 
   return (
     <div className="max-w-5xl mx-auto my-10 px-4 p-5 border border-gray-300 rounded-md">
@@ -14,7 +21,7 @@ const Cart = ({ cart, setCart }) => {
       </div>
       <div>
         {cart.map((item) => (
-          <div className="flex items-center justify-between px-4 py-2 rounded-md  mt-5">
+          <div key={item.id} className="flex items-center justify-between px-4 py-2 rounded-md  mt-5">
             <div className="flex items-center gap-10">
               <i>{item.icon}</i>
               <div>
@@ -24,20 +31,27 @@ const Cart = ({ cart, setCart }) => {
             </div>
 
             <div>
-                <button className="btn btn-error">Remove</button>
+              <button onClick={() => handelDelete(item)} className="btn btn-error">Remove</button>
             </div>
           </div>
         ))}
 
-
-        <div className="divider">
-
-        </div>
+        {
+            cart.length ===0? <h2 className="text-3xl font-bold text-center my-5">Cart is empty</h2>:<>
+            <div className="divider"></div>
         <div className="flex items-center justify-between px-4 font-bold">
-            <h2 className="text-xl">Total</h2>
-            <h2 className="text-xl">${total}</h2>
+          <h2 className="text-xl">Total</h2>
+          <h2 className="text-xl">${total}</h2>
         </div>
-        <button className="w-full rounded-full mt-3 btn btn-primary">Proceed to Checkout</button>
+        <button
+        onClick={checkout}
+          
+          className="w-full rounded-full mt-3 btn btn-primary"
+        >
+          Proceed to Checkout
+        </button>
+            </>
+        }
       </div>
     </div>
   );

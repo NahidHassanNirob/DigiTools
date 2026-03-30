@@ -19,7 +19,7 @@ const App = () => {
   const [cart,setCart]=useState([])
   console.log(cart);
   return <>
-  <NavBar></NavBar>
+  <NavBar cart={cart} setCart={setCart}></NavBar>
   <Banner></Banner>
   <Stat></Stat>
   <Toggol cart={cart} setCart={setCart} toggol={toggol} setToggol={setToggol}></Toggol>
