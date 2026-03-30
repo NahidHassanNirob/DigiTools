@@ -3,7 +3,7 @@ import React from "react";
 
 const NavBar = ({cart,setCart}) => {
   return (
-    <div className="navbar sticky top-0 z-[999] bg-base-100 shadow-sm">
+    <div className="navbar   sticky top-0 z-[999] bg-base-100 shadow-sm">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -76,7 +76,7 @@ const NavBar = ({cart,setCart}) => {
           </span>
           }
         </div>
-        <a className="">Login</a>
+        <a className=" hidden sm:block">Login</a>
         <a className="btn rounded-full btn-primary">Get Started</a>
       </div>
     </div>
