@@ -16,15 +16,20 @@ const Toggol = ({toggol,setToggol,cart,setCart}) => {
          onClick={()=>setToggol("products")}
           type="radio"
           name="my_tabs_1"
-          className="tab px-5 rounded-none"
+          className={`tab px-5 ${
+            toggol==="products"? 'bg-blue-500 , text-white' : ""
+          }`}
           aria-label="Products"
+
           defaultChecked
         />
         <input
         onClick={()=>setToggol("cart")}
           type="radio"
           name="my_tabs_1"
-          className="tab px-5 rounded-none"
+          className={`tab px-5 ${
+            toggol==="cart"? 'bg-blue-500 , text-white' : ""
+          }`}
           aria-label={`cart (${cart.length})`}
           
         />
