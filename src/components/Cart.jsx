@@ -40,7 +40,7 @@ const Cart = ({ cart, setCart }) => {
         ))}
 
         {
-            cart.length ===0? <h2 className="text-3xl font-bold text-center my-5">Cart is empty</h2>:<>
+            cart.length ===0? <h2 className="text-3xl font-bold text-center text-red-500 tracking-wider my-5">Cart is empty</h2>:<>
             <div className="divider"></div>
         <div className="flex items-center justify-between px-4 font-bold">
           <h2 className="text-xl">Total</h2>
