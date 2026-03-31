@@ -17,7 +17,7 @@ const Toggol = ({toggol,setToggol,cart,setCart}) => {
           type="radio"
           name="my_tabs_1"
           className={`tab px-5 ${
-            toggol==="products"? 'bg-blue-500 , text-white' : ""
+            toggol==="products"? 'bg-blue-500  text-white' : ""
           }`}
           aria-label="Products"
 
@@ -28,7 +28,7 @@ const Toggol = ({toggol,setToggol,cart,setCart}) => {
           type="radio"
           name="my_tabs_1"
           className={`tab px-5 ${
-            toggol==="cart"? 'bg-blue-500 , text-white' : ""
+            toggol==="cart"? 'bg-blue-500  text-white' : ""
           }`}
           aria-label={`cart (${cart.length})`}
           

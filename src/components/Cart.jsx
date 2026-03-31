@@ -10,7 +10,7 @@ const Cart = ({ cart, setCart }) => {
   const handelDelete = (itm) => {
     const remove=cart.filter(i=>i.id!==itm.id)
     setCart(remove)
-    toast.success('Remove Form Cart')
+    toast.success('Remove From Cart')
   };
   const checkout=()=>{
     setCart([])
