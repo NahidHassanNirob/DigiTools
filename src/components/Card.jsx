@@ -2,17 +2,17 @@ import { Check } from "lucide-react";
 import React from "react";
 import { toast } from "react-toastify";
 
-const Card = ({ data ,cart,setCart}) => {
-  const { name, description, price, period, features, icon } = data;
+const Card = ({ data, cart, setCart }) => {
+  const { name, description, price, period, features, icon, tagType } = data;
   const handelCard = (clickedData) => {
-    const isExist=cart.find(item=>item.id===clickedData.id)
+    const isExist = cart.find((item) => item.id === clickedData.id);
     console.log(isExist);
-    if(isExist){
-      toast.error('Already Added To Cart')
+    if (isExist) {
+      toast.error("Already Added To Cart");
       return;
     }
-    setCart([...cart,clickedData])
-    toast.success('Added To Cart Succesfully')
+    setCart([...cart, clickedData]);
+    toast.success("Added To Cart Succesfully");
   };
 
   return (
@@ -26,7 +26,7 @@ transition-all duration-300
 hover:border-blue-200 hover:bg-[#f3efef] hover:shadow-lg
 "
     >
-      <div className="space-y-3">
+      <div className="space-y-3 relative">
         <span className="p-2 border border-gray-300 rounded-full inline-block">
           {icon}
         </span>
@@ -49,6 +49,23 @@ hover:border-blue-200 hover:bg-[#f3efef] hover:shadow-lg
             </p>
           ))}
         </div>
+        <span
+  className={`absolute top-0 right-0 px-2 py-1 text-xs rounded 
+    ${
+      tagType === "popular"
+        ? "bg-blue-500 text-white"
+        : tagType === "featured"
+        ? "bg-amber-200 text-amber-700"
+        : tagType === "best seller"
+        ? "bg-orange-400 text-white"
+        : tagType === "new"
+        ? "bg-red-700 text-white"
+        : "bg-gray-500 text-white"
+    }
+  `}
+>
+  {tagType}
+</span>
       </div>
 
       <button
